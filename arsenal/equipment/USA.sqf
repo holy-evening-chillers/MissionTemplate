@@ -1,7 +1,7 @@
 ﻿params ["_arsenalContainer"];
-_crate = missionNamespace getVariable [_arsenalContainer , objNull];
+private _crate = missionNamespace getVariable [_arsenalContainer , objNull];
 
-_loadout = [
+private _loadout = [
 "rhs_weap_m14ebrri",
 "rhs_weap_m16a4",
 "rhs_weap_m16a4_carryhandle",

@@ -1,7 +1,7 @@
 ﻿params ["_arsenalContainer"];
-_crate = missionNamespace getVariable [_arsenalContainer , objNull];
+private _crate = missionNamespace getVariable [_arsenalContainer , objNull];
 
-_loadout = [
+private _loadout = [
 	"B_Carryall_ocamo","B_Carryall_oucamo","B_Carryall_mcamo","B_Carryall_khk","B_Carryall_cbr","B_AssaultPack_khk", "B_FieldPack_ocamo_Medic"
 	,"B_FieldPack_cbr_LAT", "B_FieldPack_cbr_Repair", "B_Carryall_ocamo_Exp", "B_FieldPack_ocamo_AAR",
 	"B_FieldPack_ocamo_ReconMedic"

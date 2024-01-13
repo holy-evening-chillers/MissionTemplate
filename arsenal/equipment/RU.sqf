@@ -1,7 +1,7 @@
 ﻿params ["_arsenalContainer"];
-_crate = missionNamespace getVariable [_arsenalContainer , objNull];
+private _crate = missionNamespace getVariable [_arsenalContainer , objNull];
 
-_loadout = ["rhs_weap_ak103",
+private _loadout = ["rhs_weap_ak103",
 "G_Combat", "G_Lowprofile", "G_Shades_Black", "G_Shades_Blue", "G_Shades_Green", "G_Shades_Red", "G_Sport_Blackred",
 	"G_Sport_Blackyellow", "G_Squares_Tinted", "G_Tactical_Black", "G_Tactical_Clear", "G_Bandanna_blk",
 "rhs_weap_ak103_1",

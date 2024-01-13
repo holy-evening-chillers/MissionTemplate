@@ -1,7 +1,7 @@
 ﻿params ["_arsenalContainer"];
-_crate = missionNamespace getVariable [_arsenalContainer , objNull];
+private _crate = missionNamespace getVariable [_arsenalContainer , objNull];
 
-_loadout = [
+private _loadout = [
 	"CUP_launch_M72A6_Loaded","CUP_M72A6_M",
 	"CUP_srifle_G22_des","CUP_srifle_G22_wdl","CUP_srifle_AWM_wdl_SBPMII", "CUP_srifle_G22_wdl_SBPMII","CUP_optic_SB_3_12x50_PMII", "CUP_5Rnd_762x67_G22",
 
