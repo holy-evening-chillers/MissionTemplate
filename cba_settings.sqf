@@ -1,3 +1,4 @@
+
 // ACE Advanced Ballistics
 force ace_advanced_ballistics_ammoTemperatureEnabled = true;
 force ace_advanced_ballistics_barrelLengthInfluenceEnabled = true;
@@ -75,8 +76,6 @@ ace_common_epilepsyFriendlyMode = false;
 ace_common_progressBarInfo = 2;
 ace_common_settingFeedbackIcons = 1;
 ace_common_settingProgressBarLocation = 0;
-								 
-								   
 
 // ACE Cook off
 force ace_cookoff_ammoCookoffDuration = 0.5;
@@ -267,17 +266,10 @@ force ace_medical_engine_damagePassThroughEffect = 1;
 force ace_medical_fatalDamageSource = 1;
 force ace_medical_fractureChance = 0.4;
 force ace_medical_fractures = 1;
-								  
-									  
-										 
-											  
-									  
-										  
 force ace_medical_ivFlowRate = 10;
 force ace_medical_limping = 1;
 force ace_medical_painCoefficient = 0.7;
 force ace_medical_painUnconsciousChance = 0.1;
-
 force ace_medical_painUnconsciousThreshold = 0.5;
 force ace_medical_playerDamageThreshold = 1;
 force ace_medical_spontaneousWakeUpChance = 0.561333;
@@ -330,11 +322,10 @@ force ace_medical_treatment_woundReopenChance = 1;
 force ace_medical_treatment_woundStitchTime = 5;
 
 
-				 
-												
-										
-													
-											
+	
+	
+	
+	
 
 // ACE Name Tags
 force ace_nametags_ambientBrightnessAffectViewDist = 1;
@@ -564,7 +555,7 @@ acex_volume_showNotification = true;
 
 // ACE Weapons
 ace_common_persistentLaserEnabled = true;
-								  
+
 ace_reload_displayText = true;
 ace_reload_showCheckAmmoSelf = false;
 ace_reloadlaunchers_displayStatusText = true;
@@ -597,38 +588,34 @@ acex_field_rations_hudShowLevel = 0;
 acex_field_rations_hudTransparency = -1;
 acex_field_rations_hudType = 0;
 force acex_field_rations_hungerSatiated = 1;
-									  
+
 force acex_field_rations_terrainObjectActions = true;
 force acex_field_rations_thirstQuenched = 1;
 force acex_field_rations_timeWithoutFood = 2;
 force acex_field_rations_timeWithoutWater = 2;
 force acex_field_rations_waterSourceActions = 2;
+	
 
-				
-							   
-								   
-								   
-								
-								  
 
-			   
-								 
 
-						
-									
-												
-												 
-												 
-												
-										  
+	
 
-			  
-							
-						  
-									
-						  
-									
-									
+
+
+	
+	
+	
+
+
+	
+
+
+	
+
+	
+
+	
+	
 
 // ADV - ACE CPR
 force adv_aceCPR_addTime = 30;
@@ -644,9 +631,8 @@ force adv_aceCPR_useLocation_AED = 0;
 // AI
 force cfp_autoEquipNVG = true;
 
-		 
-						  
-						  
+
+
 
 // Community Base Addons
 cba_diagnostic_ConsoleIndentType = -1;
@@ -700,7 +686,7 @@ force TFAR_giveMicroDagrToSoldier = false;
 force TFAR_givePersonalRadioToRegularSoldier = false;
 force TFAR_globalRadioRangeCoef = 2;
 force TFAR_instantiate_instantiateAtBriefing = false;
-								 
+
 force TFAR_objectInterceptionEnabled = false;
 force TFAR_objectInterceptionStrength = 400;
 force tfar_radiocode_east = "_opfor";
@@ -727,7 +713,6 @@ force TFAR_setting_DefaultRadio_Personal_West = "TFAR_anprc152";
 force TFAR_setting_DefaultRadio_Rifleman_East = "TFAR_pnr1000a";
 force TFAR_setting_DefaultRadio_Rifleman_Independent = "TFAR_anprc154";
 force TFAR_setting_DefaultRadio_Rifleman_West = "TFAR_rf7800str";
-
 force TFAR_spectatorCanHearEnemyUnits = true;
 force TFAR_spectatorCanHearFriendlies = true;
 force TFAR_takingRadio = 2;
