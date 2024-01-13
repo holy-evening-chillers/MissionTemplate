@@ -64,6 +64,7 @@ def remove_map_prefix(map_file: pathlib.Path) -> str:
     map_file_name = map_file.stem
     for prefix in MISSION_PREFIXES:
         map_file_name = map_file_name.replace(prefix, "")
+    map_file_name = map_file_name.strip("_")
     return map_file_name
 
 
@@ -80,27 +81,30 @@ def bundle_scripts(map_file: pathlib.Path, output_dir: pathlib.Path):
     """
 
     map_bundle_dir = output_dir / map_file.stem
+    if map_bundle_dir.exists():
+        shutil.rmtree(map_bundle_dir)
+        print(f"Removed existing {map_bundle_dir}")
 
     for dir in DIRS_TO_COPY:
         dir_to_copy = pathlib.Path(dir)
         if dir_to_copy.exists():
             dir_to_copy = dir_to_copy.resolve()
-            print(f"Copying {dir_to_copy} to {output_dir}")
             shutil.copytree(dir_to_copy, map_bundle_dir / dir_to_copy.name)
 
     for dir in DIRS_TO_COPY_TO_MAIN:
         dir_to_copy = pathlib.Path(dir)
         if dir_to_copy.exists():
             dir_to_copy = dir_to_copy.resolve()
-            print(f"Copying {dir_to_copy} to {map_bundle_dir}")
             for file in dir_to_copy.iterdir():
                 shutil.copy(file, map_bundle_dir)
+    shutil.copy(map_file, map_bundle_dir / "mission.sqm")
 
 
 def main():
     args = parse_args()
 
     maps = [map for map in args.maps_folder.iterdir() if "sqm" in map.suffix]
+
     for map in maps:
         bundle_scripts(map, args.output_dir)
 
