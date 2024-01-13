@@ -39,6 +39,7 @@ def parse_args() -> argparse.Namespace:
         default=pathlib.Path("template_bundles"),
         help="Path to the directory where the template bundles will be saved.",
     )
+    parser.add_argument("--zip", action="store_true", help="Zip the template bundles.")
 
     # parser.add_argument('--resource_dirs', n = "+",type=pathlib.Path, default=pathlib.Path('templates'),
     #                     help='Path to the directory containing the template files.')
@@ -116,8 +117,16 @@ def main():
 
     maps = [map for map in args.maps_folder.iterdir() if "sqm" in map.suffix]
 
+    output_dir: pathlib.Path = args.output_dir.resolve()
+
     for map in maps:
-        bundle_scripts(map, args.output_dir)
+        bundle_scripts(map, output_dir)
+
+    if args.zip:
+        zip_dir = output_dir.parent / f"{output_dir.name}_zip"
+        zip_dir.mkdir(exist_ok=True)
+        for bundle in output_dir.iterdir():
+            shutil.make_archive(str(zip_dir / bundle.name), "zip", bundle)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,33 @@
+name : Upload map bundles for release
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+
+jobs:
+  bundle_maps:
+    name: bundle maps
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: bundle files
+        shell: bash
+        run: |
+          python scripts/template_bundler.py --zip
+      - name: prep env for upload
+        run: |
+          echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+          echo "RELEASE_VERSION=${RELEASE_VERSION#v}" >> $GITHUB_ENV
+
+      - uses: AButler/upload-release-assets@v2.0.2
+        with:
+          files: template_bundles/*.zip
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          release-tag: ${{ env.RELEASE_VERSION }}
