@@ -14,7 +14,8 @@ DIRS_TO_COPY = ["arsenal", "functions", "images", "loadouts", "parameter"]
 DIRS_TO_COPY_TO_MAIN = ["root"]
 MISSION_PREFIXES = ["mission_Carrier", "mission"]
 
-logger = logging.getLogger(__name__, )
+logging.basicConfig(level=logging.INFO, format="%(levelname)s %(asctime)s: %(message)s")
+logger = logging.getLogger(__name__)
 
 
 def parse_args() -> argparse.Namespace:
@@ -92,16 +93,16 @@ def bundle_scripts(map_file: pathlib.Path, output_dir: pathlib.Path):
     map_bundle_dir = output_dir / remove_map_prefix(map_file) / f"{map_file.stem}.{remove_map_prefix(map_file)}"
     if map_bundle_dir.exists():
         shutil.rmtree(map_bundle_dir)
-        print(f"Removed existing {map_bundle_dir}")
+        logger.info(f"Removed existing %s",map_bundle_dir)
 
-    for dir in DIRS_TO_COPY:
-        dir_to_copy = pathlib.Path(dir)
+    for dir_ in DIRS_TO_COPY:
+        dir_to_copy = pathlib.Path(dir_)
         if dir_to_copy.exists():
             dir_to_copy = dir_to_copy.resolve()
             shutil.copytree(dir_to_copy, map_bundle_dir / dir_to_copy.name)
 
-    for dir in DIRS_TO_COPY_TO_MAIN:
-        dir_to_copy = pathlib.Path(dir)
+    for dir_ in DIRS_TO_COPY_TO_MAIN:
+        dir_to_copy = pathlib.Path(dir_)
         if dir_to_copy.exists():
             dir_to_copy = dir_to_copy.resolve()
             for file in dir_to_copy.iterdir():
