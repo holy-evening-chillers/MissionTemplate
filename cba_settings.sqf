@@ -1,4 +1,3 @@
-
 // ACE Advanced Ballistics
 force ace_advanced_ballistics_ammoTemperatureEnabled = true;
 force ace_advanced_ballistics_barrelLengthInfluenceEnabled = true;
@@ -15,7 +14,7 @@ force ace_advanced_fatigue_loadFactor = 0.2;
 force ace_advanced_fatigue_performanceFactor = 2;
 force ace_advanced_fatigue_recoveryFactor = 3;
 force ace_advanced_fatigue_restedSwayFactor = 0.2;
-force ace_advanced_fatigue_swayFactor = 0.2;
+force ace_advanced_fatigue_swayFactor = 0.5;
 force ace_advanced_fatigue_terrainGradientFactor = 0.2;
 
 // ACE Advanced Throwing
@@ -321,12 +320,6 @@ force ace_medical_treatment_treatmentTimeTourniquet = 7;
 force ace_medical_treatment_woundReopenChance = 1;
 force ace_medical_treatment_woundStitchTime = 5;
 
-
-	
-	
-	
-	
-
 // ACE Name Tags
 force ace_nametags_ambientBrightnessAffectViewDist = 1;
 ace_nametags_defaultNametagColor = [0.77,0.51,0.08,1];
@@ -594,28 +587,6 @@ force acex_field_rations_thirstQuenched = 1;
 force acex_field_rations_timeWithoutFood = 2;
 force acex_field_rations_timeWithoutWater = 2;
 force acex_field_rations_waterSourceActions = 2;
-	
-
-
-
-	
-
-
-
-	
-	
-	
-
-
-	
-
-
-	
-
-	
-
-	
-	
 
 // ADV - ACE CPR
 force adv_aceCPR_addTime = 30;
@@ -630,9 +601,6 @@ force adv_aceCPR_useLocation_AED = 0;
 
 // AI
 force cfp_autoEquipNVG = true;
-
-
-
 
 // Community Base Addons
 cba_diagnostic_ConsoleIndentType = -1;
@@ -686,7 +654,6 @@ force TFAR_giveMicroDagrToSoldier = false;
 force TFAR_givePersonalRadioToRegularSoldier = false;
 force TFAR_globalRadioRangeCoef = 2;
 force TFAR_instantiate_instantiateAtBriefing = false;
-
 force TFAR_objectInterceptionEnabled = false;
 force TFAR_objectInterceptionStrength = 400;
 force tfar_radiocode_east = "_opfor";
