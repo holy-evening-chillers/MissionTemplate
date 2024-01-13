@@ -25,8 +25,11 @@ jobs:
       - name: Lint init files
         if: always()
         run: |
+          echo "linting init.sqf"
           sqflint init.sqf -e e
+          echo "linting initPlayerLocal.sqf"
           sqflint initPlayerLocal.sqf -e e
+            echo "linting initServer.sqf"
           sqflint initServer.sqf -e e
       - name: lint arsenal files
         if: always()
