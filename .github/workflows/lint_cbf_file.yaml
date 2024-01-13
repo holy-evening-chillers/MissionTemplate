@@ -24,4 +24,22 @@ jobs:
       # one step for each folder to lint
       - name: Lint init files
         run: |
-          sqflint init*.sqf
+          sqflint init.sqf
+          sqflint initPlayerLocal.sqf
+          sqflint initServer.sqf
+      - name: lint arsenal files
+        run: |
+          sqflint -d arsenal
+
+      - name: lint functions files
+        run: |
+          sqflint -d functions
+
+      - name: lint loadout files
+        run: |
+          sqflint -d loadouts
+
+      - name: lint parameters
+        run: |
+          sqflint -d parameters
+      
