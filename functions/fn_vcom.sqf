@@ -1,15 +1,15 @@
 if(!isServer) exitWith{};
 
-_useVcom = 	"VcomUse" call BIS_fnc_getParamValue;
-_vcomArty = "VcomArty" call BIS_fnc_getParamValue;
-_vcomMines = "VcomMines" call BIS_fnc_getParamValue; 
-_vcomHearing = "VcomHearing" call BIS_fnc_getParamValue;
-_vcomStealing = "VcomStealing" call BIS_fnc_getParamValue;
-_vcomHelp = "VcomHelp" call BIS_fnc_getParamValue;
-_vcomDelay = "VcomDelay" call BIS_fnc_getParamValue;
-_vcomSkillChange = "VcomSkillChange" call BIS_fnc_getParamValue;
-_vcomCargo = "VcomCargo" call BIS_fnc_getParamValue;
-_vcomSupress = "VcomSupress" call BIS_fnc_getParamValue;
+private _useVcom = 	"VcomUse" call BIS_fnc_getParamValue;
+private _vcomArty = "VcomArty" call BIS_fnc_getParamValue;
+private _vcomMines = "VcomMines" call BIS_fnc_getParamValue; 
+private _vcomHearing = "VcomHearing" call BIS_fnc_getParamValue;
+private _vcomStealing = "VcomStealing" call BIS_fnc_getParamValue;
+private _vcomHelp = "VcomHelp" call BIS_fnc_getParamValue;
+private _vcomDelay = "VcomDelay" call BIS_fnc_getParamValue;
+private _vcomSkillChange = "VcomSkillChange" call BIS_fnc_getParamValue;
+private _vcomCargo = "VcomCargo" call BIS_fnc_getParamValue;
+private _vcomSupress = "VcomSupress" call BIS_fnc_getParamValue;
 
 if (_useVcom == 0) then { Vcm_ActivateAI = false;} 
 else {

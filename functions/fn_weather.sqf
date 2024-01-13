@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////Setup Weather//////////////////////////////////////////////////////////
 if (!isServer) exitWith {};
 
-_weatherValue = "Weather" call BIS_fnc_getParamValue;
+private _weatherValue = "Weather" call BIS_fnc_getParamValue;
 if (_weatherValue == 99) exitWith {};
 
 private _weatherArray = switch (_weatherValue) do {

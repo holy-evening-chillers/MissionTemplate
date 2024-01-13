@@ -1,13 +1,13 @@
 ﻿///////////////////////////////////////////////////////Setup Time and Date//////////////////////////////////////////////////////////
 if (!isServer) exitWith {};
 
-_now = date; // current date :) [year, month, day, hour, minute]
+private _now = date; // current date :) [year, month, day, hour, minute]
 
-_year = 	"Year"	call BIS_fnc_getParamValue;
-_month = 	"Month"	call BIS_fnc_getParamValue;
-_day = 		"Day" 	call BIS_fnc_getParamValue;
-_hour = 	"Hour"	call BIS_fnc_getParamValue;
-_minute = 	random 59;
+private _year = 	"Year"	call BIS_fnc_getParamValue;
+private _month = 	"Month"	call BIS_fnc_getParamValue;
+private _day = 		"Day" 	call BIS_fnc_getParamValue;
+private _hour = 	"Hour"	call BIS_fnc_getParamValue;
+private _minute = 	random 59;
 
 //aktuelles Jahr!
 if(_year == 99) then 
