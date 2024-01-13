@@ -7,7 +7,7 @@ on:
       branches:
       - main
 jobs:
-  production-deploy:
+  check_cbf_files:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -41,5 +41,5 @@ jobs:
 
       - name: lint parameters
         run: |
-          sqflint -d parameters
+          sqflint -d parameter
       
