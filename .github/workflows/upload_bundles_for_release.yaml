@@ -28,6 +28,6 @@ jobs:
 
       - uses: AButler/upload-release-assets@v2.0.2
         with:
-          files: template_bundles/*.zip
+          files: template_bundles_zip/*.zip
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           release-tag: ${{ env.RELEASE_VERSION }}
