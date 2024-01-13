@@ -125,8 +125,8 @@ acex_fortify_settingHint = 2;
 force ace_frag_enabled = true;
 force ace_frag_maxTrack = 10;
 force ace_frag_maxTrackPerFrame = 10;
-force ace_frag_reflectionsEnabled = false;
-force ace_frag_spallEnabled = false;
+force ace_frag_reflectionsEnabled = true;
+force ace_frag_spallEnabled = true;
 
 // ACE G-Forces
 force ace_gforces_coef = 1;
@@ -142,7 +142,7 @@ force ace_grenades_convertExplosives = true;
 
 // ACE Headless
 force acex_headless_delay = 15;
-force acex_headless_enabled = false;
+force acex_headless_enabled = true;
 force acex_headless_endMission = 0;
 force acex_headless_log = false;
 force acex_headless_transferLoadout = 0;
@@ -284,10 +284,10 @@ force ace_medical_spontaneousWakeUpChance = 0.561333;
 force ace_medical_spontaneousWakeUpEpinephrineBoost = 1;
 force ace_medical_statemachine_AIUnconsciousness = true;
 force ace_medical_statemachine_cardiacArrestBleedoutEnabled = false;
-force ace_medical_statemachine_cardiacArrestTime = 1244;
+force ace_medical_statemachine_cardiacArrestTime = 3000;
 force ace_medical_statemachine_fatalInjuriesAI = 0;
-force ace_medical_statemachine_fatalInjuriesPlayer = 0;
-force ace_medical_treatment_advancedBandages = 1;
+force ace_medical_statemachine_fatalInjuriesPlayer = 2;
+force ace_medical_treatment_advancedBandages = 2;
 force ace_medical_treatment_advancedDiagnose = 2;
 force ace_medical_treatment_advancedMedication = true;
 force ace_medical_treatment_allowBodyBagUnconscious = false;
@@ -310,7 +310,7 @@ force ace_medical_treatment_holsterRequired = 0;
 force ace_medical_treatment_litterCleanupDelay = 600;
 force ace_medical_treatment_locationEpinephrine = 0;
 force ace_medical_treatment_locationIV = 0;
-force ace_medical_treatment_locationPAK = 0;
+force ace_medical_treatment_locationPAK = 3;
 force ace_medical_treatment_locationsBoostTraining = false;
 force ace_medical_treatment_locationSurgicalKit = 2;
 force ace_medical_treatment_maxLitterObjects = 500;
@@ -373,14 +373,14 @@ force ace_overheating_overheatingDispersion = true;
 force ace_overheating_overheatingRateOfFire = true;
 ace_overheating_particleEffectsAndDispersionDistance = 3000;
 ace_overheating_showParticleEffects = true;
-ace_overheating_showParticleEffectsForEveryone = false;
+ace_overheating_showParticleEffectsForEveryone = true;
 force ace_overheating_suppressorCoef = 1;
 force ace_overheating_unJamFailChance = 0.1;
-force ace_overheating_unJamOnreload = false;
-force ace_overheating_unJamOnSwapBarrel = false;
+force ace_overheating_unJamOnreload = true;
+force ace_overheating_unJamOnSwapBarrel = true;
 
 // ACE Pointing
-force ace_finger_enabled = false;
+force ace_finger_enabled = true;
 ace_finger_indicatorColor = [0.83,0.68,0.21,0.75];
 ace_finger_indicatorForSelf = true;
 force ace_finger_maxRange = 4;
@@ -392,7 +392,7 @@ force ace_pylons_enabledForZeus = true;
 force ace_pylons_enabledFromAmmoTrucks = true;
 force ace_pylons_rearmNewPylons = true;
 force ace_pylons_requireEngineer = false;
-force ace_pylons_requireToolkit = true;
+force ace_pylons_requireToolkit = false;
 force ace_pylons_searchDistance = 15;
 force ace_pylons_timePerPylon = 5;
 
@@ -563,8 +563,8 @@ acex_volume_remindIfLowered = false;
 acex_volume_showNotification = true;
 
 // ACE Weapons
-ace_common_persistentLaserEnabled = false;
-									  
+ace_common_persistentLaserEnabled = true;
+								  
 ace_reload_displayText = true;
 ace_reload_showCheckAmmoSelf = false;
 ace_reloadlaunchers_displayStatusText = true;
@@ -743,7 +743,7 @@ force VCM_DrivingDelay = 0.75;
 force VCM_DrivingDist = 10;
 
 // VCOM SETTINGS
-force VCM_ActivateAI = true;
+force VCM_ActivateAI = false;
 force VCM_ADVANCEDMOVEMENT = true;
 force VCM_AIDISTANCEVEHPATH = 100;
 force VCM_AIHEALING = true;
@@ -783,7 +783,7 @@ zen_camera_defaultSpeedCoef = 1;
 zen_camera_fastSpeedCoef = 1;
 zen_camera_followTerrain = true;
 force zen_common_ascensionMessages = false;
-force zen_common_autoAddObjects = false;
+force zen_common_autoAddObjects = true;
 force zen_common_cameraBird = false;
 zen_common_darkMode = false;
 zen_common_disableGearAnim = true;
