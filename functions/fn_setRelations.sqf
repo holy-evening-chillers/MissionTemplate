@@ -1,8 +1,8 @@
 if (!isServer) exitWith {};
 
-_blue = 	"BlueRelation"	call BIS_fnc_getParamValue;
-_green = 	"GreenRelation"	call BIS_fnc_getParamValue;
-_red = 		"RedRelation"	call BIS_fnc_getParamValue;
+private _blue = 	"BlueRelation"	call BIS_fnc_getParamValue;
+private _green = 	"GreenRelation"	call BIS_fnc_getParamValue;
+private _red = 		"RedRelation"	call BIS_fnc_getParamValue;
 
 east setFriend [west, 1];
 
