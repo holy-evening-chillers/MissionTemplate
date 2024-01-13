@@ -19,7 +19,7 @@ _caller groupchat "Linksklick auf die Karte für die Absprungposition.";
 
 openMap true;
 
-private mapclick = false;
+mapclick = false;
 
 onMapSingleClick "clickpos = _pos; mapclick = true; onMapSingleClick """";true;";
 
