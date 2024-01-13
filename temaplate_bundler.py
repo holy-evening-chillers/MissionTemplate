@@ -9,7 +9,7 @@ import pathlib
 import argparse
 
 DIRS_TO_COPY = ['templates', 'template_bundles', 'scripts', 'mission_framework']
-
+DIRS_TO_COPY_TO_MAIN = ['root']
 
 def parse_args() -> argparse.Namespace:
     """
