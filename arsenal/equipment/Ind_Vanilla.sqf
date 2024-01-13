@@ -1,7 +1,7 @@
 ﻿params ["_arsenalContainer"];
-_crate = missionNamespace getVariable [_arsenalContainer , objNull];
+private _crate = missionNamespace getVariable [_arsenalContainer , objNull];
 
-_loadout = [
+private _loadout = [
 	"U_I_CombatUniform","U_I_CombatUniform_tshirt", "U_I_CombatUniform_shortsleeve", "U_I_pilotCoveralls", "U_I_HeliPilotCoveralls", "U_I_GhillieSuit", "U_I_OfficerUniform",
 	"V_PlateCarrierIA1_dgtl", "V_PlateCarrierIA2_dgtl", "V_PlateCarrierIAGL_dgtl",
 	"H_HelmetIA", "H_HelmetIA_net", "H_HelmetIA_camo", "H_PilotHelmetHeli_I", "H_CrewHelmetHeli_I", "H_MilCap_dgtl", 

@@ -1,9 +1,9 @@
 ﻿params ["_arsenalContainer"];
-_crate = missionNamespace getVariable [_arsenalContainer , objNull];
+private _crate = missionNamespace getVariable [_arsenalContainer , objNull];
 //https://community.bistudio.com/wiki/Global_Mobilization_Weapons
 //https://community.bistudio.com/wiki/Global_Mobilization_Characters#Uniforms
 
-_loadout = [
+private _loadout = [
 	"gm_g3a3_oli", "gm_g3a4_oli", "gm_m16a1_blk", "gm_m16a2_blk", "gm_c7a1_oli", "gm_20rnd_762x51mm_b_t_dm21_g3_blk", "gm_20rnd_762x51mm_b_t_dm21a1_g3_blk",
 	 "gm_20rnd_762x51mm_b_t_dm21a2_g3_blk", "gm_20rnd_762x51mm_b_dm111_g3_blk", "gm_20rnd_762x51mm_b_dm41_g3_blk", "gm_20rnd_762x51mm_ap_dm151_g3_blk", "gm_20rnd_762x51mm_b_t_dm21_g3_des",
 "gm_20rnd_762x51mm_b_t_dm21a1_g3_des", "gm_20rnd_762x51mm_b_t_dm21a2_g3_des", "gm_20rnd_762x51mm_b_dm111_g3_des", "gm_20rnd_762x51mm_b_dm41_g3_des", "gm_20rnd_762x51mm_ap_dm151_g3_des", "gm_1rnd_67mm_heat_dm22a1_g3", 

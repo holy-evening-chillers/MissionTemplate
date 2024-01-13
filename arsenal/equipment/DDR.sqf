@@ -1,7 +1,7 @@
 ﻿params ["_arsenalContainer"];
-_crate = missionNamespace getVariable [_arsenalContainer , objNull];
+private _crate = missionNamespace getVariable [_arsenalContainer , objNull];
 
-_loadout = [
+private _loadout = [
 	"gm_gc_army_uniform_soldier_80_blk","gm_gc_army_uniform_dress_80_gry","gm_gc_army_uniform_soldier_80_win",
 	"gm_gc_army_uniform_soldier_80_str",
 

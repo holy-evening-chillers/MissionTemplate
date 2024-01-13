@@ -1,8 +1,8 @@
 ﻿params ["_arsenalContainer"];
-_crate = missionNamespace getVariable [_arsenalContainer , objNull];
+private _crate = missionNamespace getVariable [_arsenalContainer , objNull];
 //Lists of items to include. Fill it with the stuff you want in the Arsenal!
 
-_loadout = [
+private _loadout = [
 "rhs_weap_ak103",
 "rhs_weap_ak103_1",
 "rhs_weap_ak103_2",
