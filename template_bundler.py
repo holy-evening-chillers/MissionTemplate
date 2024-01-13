@@ -1,7 +1,7 @@
 """
-This script creates the temaplate bundles for the individual maps.
+This script creates the template bundles for the individual maps.
 
-This way you can easily download the template for the map you want to use for your mission,
+This way you can download the template for the map you want to use for your mission,
 without having to deal with the whole repository.
 """
 
