@@ -23,7 +23,7 @@ if !(isClass(configFile >> "CfgPatches" >> "ace_explosives")) exitWith {};
 		private _pos = getPosATL _mine;
 		private _vector = [vectorDir _mine,vectorUp _mine];
 		private _type = toUpper (typeOf _mine);
-		_replacementType = call {
+		private _replacementType = call {
 			if ( _type isEqualTo "IEDLANDBIG_REMOTE_AMMO" ) exitWith { "ACE_IEDLANDBIG_RANGE" };
 			if ( _type isEqualTo "IEDLANDSMALL_REMOTE_AMMO" || _type isEqualTo "CUP_IED_V3_AMMO" ) exitWith { "ACE_IEDLANDSMALL_RANGE" };
 			if ( _type isEqualTo "IEDURBANBIG_REMOTE_AMMO" || _type isEqualTo "CUP_IED_V2_AMMO"  || _type isEqualTo "CUP_IED_V4_AMMO" ) exitWith { "ACE_IEDURBANBIG_RANGE" };
@@ -39,7 +39,7 @@ if !(isClass(configFile >> "CfgPatches" >> "ace_explosives")) exitWith {};
 		};
 		if !( _replacementType isEqualTo "" ) then {
 			deleteVehicle _mine;
-			_new = createMine [_replacementType, _pos, [], 0];
+			private _new = createMine [_replacementType, _pos, [], 0];
 			_new setPosATL [_pos select 0, _pos select 1, _height];
 			_new setVectorDirAndUp _vector;
 			_new enableDynamicSimulation true;
