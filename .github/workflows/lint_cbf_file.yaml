@@ -1,0 +1,53 @@
+name: example-workflow
+on:
+  push:
+      branches:
+      - main
+  pull_request:
+      branches:
+      - main
+jobs:
+  check_cbf_files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # install our fork as the main repo is archived
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install git+https://github.com/holy-evening-chillers/sqf.git@master
+
+      # one step for each folder to lint
+      - name: Lint init files
+        if: always()
+        run: |
+          echo "linting init.sqf"
+          sqflint init.sqf -e e
+          echo "linting initPlayerLocal.sqf"
+          sqflint initPlayerLocal.sqf -e e
+            echo "linting initServer.sqf"
+          sqflint initServer.sqf -e e
+      - name: lint arsenal files
+        if: always()
+        run: |
+          sqflint -d arsenal -e e
+
+      - name: lint functions files
+        if: always()
+        run: |
+          sqflint -d functions -e e
+
+      - name: lint loadout files
+        if: always()
+        run: |
+          sqflint -d loadouts -e e
+
+      - name: lint parameters
+        if: always()
+        run: |
+          sqflint -d parameter -e e
+      

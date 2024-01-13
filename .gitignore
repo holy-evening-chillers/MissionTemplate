@@ -179,3 +179,5 @@ pyrightconfig.json
 # pycharm related stuff
 .idea/
 
+# virtualenv related stuff
+*venv*/
