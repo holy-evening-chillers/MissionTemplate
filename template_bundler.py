@@ -8,10 +8,13 @@ without having to deal with the whole repository.
 import pathlib
 import argparse
 import shutil
+import logging
 
 DIRS_TO_COPY = ["arsenal", "functions", "images", "loadouts", "parameter"]
 DIRS_TO_COPY_TO_MAIN = ["root"]
 MISSION_PREFIXES = ["mission_Carrier", "mission"]
+
+logger = logging.getLogger(__name__, )
 
 
 def parse_args() -> argparse.Namespace:
@@ -62,9 +65,13 @@ def remove_map_prefix(map_file: pathlib.Path) -> str:
         str: The map file name without the prefix.
     """
     map_file_name = map_file.stem
+    prefix_detected = False
     for prefix in MISSION_PREFIXES:
         map_file_name = map_file_name.replace(prefix, "")
-    map_file_name = map_file_name.strip("_")
+        prefix_detected = True
+    map_file_name = map_file_name.strip("_-")
+    if not prefix_detected:
+        logger.warning(f"Map file name %s does not contain any of the expected prefixes %s", map_file, MISSION_PREFIXES)
     return map_file_name
 
 
@@ -80,7 +87,9 @@ def bundle_scripts(map_file: pathlib.Path, output_dir: pathlib.Path):
         bool: True if the bundling was successful, False otherwise.
     """
 
-    map_bundle_dir = output_dir / map_file.stem
+    # template files must be in a folder with  .mapname suffix
+
+    map_bundle_dir = output_dir / remove_map_prefix(map_file) / f"{map_file.stem}.{remove_map_prefix(map_file)}"
     if map_bundle_dir.exists():
         shutil.rmtree(map_bundle_dir)
         print(f"Removed existing {map_bundle_dir}")
