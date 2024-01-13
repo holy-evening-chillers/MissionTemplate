@@ -88,12 +88,13 @@ def bundle_scripts(map_file: pathlib.Path, output_dir: pathlib.Path):
         bool: True if the bundling was successful, False otherwise.
     """
 
-    # template files must be in a folder with  .mapname suffix
-
+    # template files must be in a folder with .map_name suffix
+    # example: mission_Altis.sqm -> Altis/mission_Altis.Altis
+    # example: mission_Carrier-Altis.sqm -> Altis/mission_Carrier-Altis.Altis
     map_bundle_dir = output_dir / remove_map_prefix(map_file) / f"{map_file.stem}.{remove_map_prefix(map_file)}"
     if map_bundle_dir.exists():
         shutil.rmtree(map_bundle_dir)
-        logger.info(f"Removed existing %s",map_bundle_dir)
+        logger.info(f"Removed existing %s", map_bundle_dir)
 
     for dir_ in DIRS_TO_COPY:
         dir_to_copy = pathlib.Path(dir_)
