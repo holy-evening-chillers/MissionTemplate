@@ -5,12 +5,11 @@
 This is the HEC Template. It is still WIP.
 
 
------------------- Arsenal -------------------
+### Arsenal
 This Template provides an unrestricted ACE Arsenal and an restricted Arsenal based on the chosen param for the Loadout.
 The restricted Arsenal is to help players with their choice of weapon and uniform according to the faction the mission author wants to play.
-----------------------------------------------
 
------------------- Loadouts ------------------
+### Loadouts 
 Night Vision Googles are added if your starting time is in the night hours.
 
 To add a loadout, 
@@ -35,17 +34,16 @@ mmg : Heavy machine gunner
 med : Medic 
 pilot : Pilot
 crew : Vehicle Crew
-----------------------------------------------
 
------------------- Rank ----------------------
+### Rank
 You can change your Rank on the Computer next to the Arsenal
-----------------------------------------------
 
------------------- Carrier ----------------------
+
+### Carrier
 To use Respawn on a Carrier like the Nimitz or the Freedom, place an object called respawn_helper/respawn_helper_east/respawn_helper_independent
-----------------------------------------------
 
------------------- TODOS ----------------------
+
+### TODOS
 Side Relation Script (Green + Red)
 More Loadouts
 Loadout Dialog,
@@ -59,7 +57,7 @@ Zeus syncronisation,
 
 All the stuff you need to know to work with / on this repo
 
-## Template Bundler
+### Template Bundler
 
 To run the template bundler, you need a working python installation with >= python 3.8.0
 
