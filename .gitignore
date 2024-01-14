@@ -181,3 +181,5 @@ pyrightconfig.json
 
 # virtualenv related stuff
 *venv*/
+template_bundles
+/template_bundles_zip/
