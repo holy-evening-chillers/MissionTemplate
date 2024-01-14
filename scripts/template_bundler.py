@@ -10,6 +10,7 @@ import argparse
 import shutil
 import logging
 
+# these could be configurable, but there is no need for it now, and I doubt that this will ever be used outside HEC
 DIRS_TO_COPY = ["arsenal", "functions", "images", "loadouts", "parameter"]
 DIRS_TO_COPY_TO_MAIN = ["root"]
 MISSION_PREFIXES = ["mission_Carrier", "mission"]
@@ -73,7 +74,11 @@ def remove_map_prefix(map_file: pathlib.Path) -> str:
         prefix_detected = True
     map_file_name = map_file_name.strip("_-")
     if not prefix_detected:
-        logger.warning(f"Map file name %s does not contain any of the expected prefixes %s", map_file, MISSION_PREFIXES)
+        logger.warning(
+            f"Map file name %s does not contain any of the expected prefixes %s",
+            map_file,
+            MISSION_PREFIXES,
+        )
     return map_file_name
 
 
@@ -85,14 +90,20 @@ def bundle_scripts(map_file: pathlib.Path, output_dir: pathlib.Path):
         map_file: Path to the map file.
         output_dir: Path to the output directory.
 
-    Returns:
-        bool: True if the bundling was successful, False otherwise.
+    Raises:
+        FileNotFoundError: If the map file does not exist.
+        FileExistsError: If a file with the name of the map is part of the scripts.
     """
 
     # template files must be in a folder with .map_name suffix
     # example: mission_Altis.sqm -> Altis/mission_Altis.Altis
     # example: mission_Carrier-Altis.sqm -> Altis/mission_Carrier-Altis.Altis
-    map_bundle_dir = output_dir / remove_map_prefix(map_file) / f"{map_file.stem}.{remove_map_prefix(map_file)}"
+    map_bundle_dir = (
+        output_dir
+        / remove_map_prefix(map_file)
+        / f"{map_file.stem}.{remove_map_prefix(map_file)}"
+    )
+
     if map_bundle_dir.exists():
         shutil.rmtree(map_bundle_dir)
         logger.info(f"Removed existing %s", map_bundle_dir)
@@ -109,6 +120,7 @@ def bundle_scripts(map_file: pathlib.Path, output_dir: pathlib.Path):
             dir_to_copy = dir_to_copy.resolve()
             for file in dir_to_copy.iterdir():
                 shutil.copy(file, map_bundle_dir)
+
     shutil.copy(map_file, map_bundle_dir / "mission.sqm")
 
 
